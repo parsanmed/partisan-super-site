@@ -1,0 +1,31 @@
+name: Generate
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.2.0
+        
+      - name: Setup Python 3.9
+        uses: actions/setup-python@v3.1.2
+        with:
+          python-version: 3.9
+      
+      - name: Dependencies pip and npm
+        run: |
+          python3 -m pip install -r requirements.txt
+          npm install --no-save --no-audit --force --no-fund --prefix $GITHUB_WORKSPACE
+      
+      - name: Download chromium
+        run: |
+          python3 -m playwright install chromium
+          python3 -c "from playwright.sync_api import sync_playwright; from subprocess import run; path=sync_playwright().start().chromium.executable_path; run(['export', 'CHROME_BIN=' + path])"
+      
+      - name: Cloning pss with SingleFile
+        run: $GITHUB_WORKSPACE/node_modules/.bin/single-file https://partisan.super.site/ --browser-executable-path=$CHROME_BIN --crawl-links --output-directory=web --crawl-inner-links-only --crawl-replace-urls --filename-template="{url-pathname}.html"
