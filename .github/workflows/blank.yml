@@ -29,3 +29,12 @@ jobs:
       
       - name: Cloning pss with SingleFile
         run: $GITHUB_WORKSPACE/node_modules/.bin/single-file https://partisan.super.site/ --browser-executable-path=$CHROME_BIN --crawl-links --output-directory=web --crawl-inner-links-only --crawl-replace-urls --filename-template="{url-pathname}.html"
+        
+      - name: Commit to the repo
+        run: |
+          git config --global user.name "psscloner"
+          git config --global user.email "parsanmed@users.noreply.github.com"
+          git add .
+          git commit -m "Update cloned files"
+          git push
+
