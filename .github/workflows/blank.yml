@@ -29,6 +29,12 @@ jobs:
       
       - name: Cloning pss with SingleFile
         run: $GITHUB_WORKSPACE/node_modules/.bin/single-file https://partisan.super.site/ --browser-executable-path=$CHROME_BIN --crawl-links --output-directory=web --crawl-inner-links-only --crawl-replace-urls --filename-template="{url-pathname}.html"
+
+      - name: Some preparations
+        run: |
+          cd web
+          mv "No pathname.html" index.html
+          sed -i -- 's/href="https://partisan.super.site/href="https://parsanmed.github.io/partisan-super-site/g' *.html
         
       - name: Commit to the repo
         run: |
@@ -37,4 +43,3 @@ jobs:
           git add .
           git commit -m "Update cloned files"
           git push
-
