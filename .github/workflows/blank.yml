@@ -1,5 +1,7 @@
 name: Generate
-on: [push]
+on:
+  schedule:
+    - "59 6 */5 * *"
 
 jobs:
   build:
