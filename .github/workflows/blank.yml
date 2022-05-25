@@ -38,6 +38,7 @@ jobs:
           cd web
           mv "No pathname.html" index.html
           sed -i -- 's,href="https://partisan.super.site,href="https://parsanmed.github.io/partisan-super-site/web,g' *.html
+          cp index.html ../index.html
         
       - name: Commit to the repo
         run: |
