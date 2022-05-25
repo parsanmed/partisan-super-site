@@ -34,7 +34,7 @@ jobs:
         run: rm $GITHUB_WORKSPACE/web/*
       
       - name: Cloning pss with SingleFile
-        run: $GITHUB_WORKSPACE/node_modules/.bin/single-file https://partisan.super.site/ --browser-executable-path=$CHROME_BIN --crawl-links --output-directory=web --crawl-inner-links-only --crawl-replace-urls --filename-template="{url-pathname}.html"
+        run: $GITHUB_WORKSPACE/node_modules/.bin/single-file https://partisan.super.site/ --browser-executable-path=$CHROME_BIN --crawl-links --output-directory=web --crawl-inner-links-only --crawl-replace-urls --filename-template="{url-pathname}.html" --removeFrames=true --blockScripts=false
 
       - name: Some preparations
         run: |
