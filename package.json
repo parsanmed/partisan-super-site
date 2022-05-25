@@ -1,0 +1,10 @@
+{
+    "name": "pss-cloner",
+    "version": "0.0.1",
+    "description": "FCKRKN",
+    "author": "parsanmed",
+    "repository": "github:parsanmed/partisan-super-site",
+    "dependencies": {
+        "single-file": "git+https://github.com/gildas-lormeau/SingleFile.git"
+    }
+}
