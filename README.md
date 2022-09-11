@@ -4,4 +4,10 @@
 
 [БИБЛИОТЕКА “МЕДИА ПАРТИЗАН”](https://tinyurl.com/wikipzn) - `https://tinyurl.com/wikipzn` - оригинал: https://partizan-wiki.super.site/
 
+## СМИ
+
 [Новостной агрегатор "The True Story"](https://tinyurl.com/thetrustory) - `https://tinyurl.com/thetrustory` - оригинал: https://thetruestory.news/
+
+[Медуза](https://tinyurl.com/meduza-ru) - `https://tinyurl.com/meduza-ru` - оригинал: https://meduza.io/
+
+[Холод](https://tinyurl.com/holod-ru) - `https://tinyurl.com/holod-ru` - оригинал: https://holod.media/
