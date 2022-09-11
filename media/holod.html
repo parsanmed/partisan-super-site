@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script type="text/javascript">
+            var ACTUAL_MIRROR = "https://raw.githubusercontent.com/parsanmed/partisan-super-site/master/media/actual-holod";
+
+            function redirect() {
+                var xhr = new XMLHttpRequest();
+
+                xhr.onload = function() {
+                    var result = xhr.response;
+                    location.replace(result);
+                }
+                xhr.open("GET", ACTUAL_MIRROR);
+                xhr.send();
+            }
+            redirect();
+        </script>
+    </head>
+    <body>
+        <p>Если не работает, то ищите актуальный URL здесь -> <a href="https://raw.githubusercontent.com/parsanmed/partisan-super-site/master/media/actual-holod</a></p>
+    </body>
+</html>
